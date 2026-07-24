@@ -2,7 +2,7 @@
 
 import { getUser } from "@/app/actions/auth";
 import { getGamesByIds, searchGames } from "@/app/api/api";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 
 export const useGetUser = () => {
   const { data: user, isLoading } = useQuery({
@@ -36,6 +36,7 @@ export const useGetGames = ({
     queryKey: [`games-${page}-${JSON.stringify(filters)}-${query}`],
     queryFn: async () => await searchGames(query, page, filters, pageSize),
     enabled: !isDisabled,
+    placeholderData: keepPreviousData,
   });
   return { games, isLoading };
 };
