@@ -51,11 +51,13 @@ export function PaginationCustom({
             <ArrowLeft className="mr-1" /> Prev
           </Button>
         </PaginationItem>
+        {!getVisiblePages().includes(1) && (
         <PaginationItem className={`${page === count ? " bg-rose-400" : ""}`}>
-          <PaginationLink onClick={() => setPage(1)} className={`${page === 1 ? " bg-rose-400" : ""}`}>
+            <PaginationLink onClick={() => setPage(1)} className={`${page === 1 ? " bg-rose-400" : ""}`}>
             1
-          </PaginationLink>
+            </PaginationLink>
         </PaginationItem>
+        )}
 
         {page > 3 && (
           <PaginationItem>
