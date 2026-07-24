@@ -26,10 +26,8 @@ const ButtonGame = ({
         onClick && onClick();
       }}
       /* تم تغيير hover:text-rose-400 إلى hover:text-teal-300 وإضافة لمعان text-shadow فيروزي */
-      className={`${
-        className || ""
-      } text-white hover:text-teal-300 [hover:text-shadow:0_0_10px_rgba(45,212,191,0.6)] duration-200 min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto font-medium tracking-wide`}
-    >
+      className={`${className || ""
+        } text-white hover:text-teal-300 [hover:text-shadow:0_0_10px_rgba(45,212,191,0.6)] duration-200 active:scale-95 transition-transform min-w-[100px] relative px-6 flex-initial gap-2 py-2 text-center m-auto font-medium tracking-wide`}    >
       {ButtonSvg(false)}
       <span className="relative z-10">
         {disabled ? <Spinner /> : link ? <Link href={link}>{text}</Link> : text}

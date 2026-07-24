@@ -13,7 +13,7 @@ const NavLink = ({ navLink }: { navLink: { link: string; label: string; icon: Re
     <Link
       href={navLink.link}
       /* تم تحويل درجات الـ rose بالكامل إلى teal-400 الفيروزي النيون مع توهج ناعم عند الاختيار */
-      className={`flex my-2 duration-200 gap-3 items-center p-2 rounded-md transition-all font-medium tracking-wide w-full
+      className={`flex my-2 duration-200 gap-3 items-center p-2 rounded-md transition-all active:scale-95 font-medium tracking-wide w-full
         ${
           isActive 
             ? "text-teal-400 font-bold [text-shadow:0_0_12px_rgba(45,212,191,0.5)] bg-teal-950/20" 
