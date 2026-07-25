@@ -12,6 +12,7 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
 import { useQueryClient } from "@tanstack/react-query";
+import { IoGameController } from "react-icons/io5";
 export const NAV_LINKS = [
   {
     link: "/",
@@ -26,7 +27,7 @@ export const NAV_LINKS = [
   {
     link: "/games",
     label: "Games",
-    icon: <MdDashboard />,
+    icon: <IoGameController />,
   },
   {
     link: "/wishlist",
