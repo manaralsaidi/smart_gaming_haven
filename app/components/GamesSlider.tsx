@@ -47,6 +47,7 @@ const GamesSlider = ({
                       fill
                       src={game.background_image}
                       alt={game.name}
+                      sizes="(max-width: 768px) 40vw, 20vw"
                     />
                   </div>
                 </Link>
@@ -63,6 +64,7 @@ const GamesSlider = ({
                         fill
                         src={game.background_image}
                         alt={game.name}
+                        sizes="(max-width: 768px) 50vw, 25vw"
                       />
                     </div>
                     <h3 className="text-base line-clamp-1 mt-2 text-white font-semibold group-hover:text-teal-400 transition-colors">

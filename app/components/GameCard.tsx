@@ -47,6 +47,7 @@ const GameCard = ({ game, wishlist, screenBig = false }: { game: any; wishlist?:
                 src={getImageUrl(game?.background_image)}
                 alt={game?.name || "Game Image"}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 300px"
               />
             </div>
 
