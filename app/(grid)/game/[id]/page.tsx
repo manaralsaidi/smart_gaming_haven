@@ -24,7 +24,7 @@ interface PageProps {
 const page = async ({ params }: PageProps) => {
   const resolvedParams = await params;
   const id = resolvedParams.id;
-  
+
   if (!id) {
     return <div className="text-center text-red-500 py-10">Invalid Game ID</div>;
   }
@@ -42,7 +42,7 @@ const page = async ({ params }: PageProps) => {
   const currentUser = authResult && "data" in authResult && authResult.data
     ? { id: authResult.data._id || authResult.data.id, name: authResult.data.name }
     : null;
-  
+
   if (!game) {
     return <div className="text-center text-gray-400 py-20">Failed to load game details.</div>;
   }
@@ -81,12 +81,13 @@ const page = async ({ params }: PageProps) => {
     .map((validSrc) => ({
       card: (
         <div className="rounded-xl overflow-hidden h-[24rem] md:h-[36rem] w-full relative">
-          <Image 
-            src={validSrc} 
-            alt={data?.name || "Game Image"} 
-            fill 
-            className="object-cover" 
+          <Image
+            src={validSrc}
+            alt={data?.name || "Game Image"}
+            fill
+            className="object-cover"
             priority={false}
+            sizes="100vw"
           />
         </div>
       ),
@@ -101,7 +102,7 @@ const page = async ({ params }: PageProps) => {
           <div className="text-gray-400 text-sm">
             Rating count: <span className="text-white font-medium">{data?.ratings_count}</span>
           </div>
-          
+
           {/* عرض السلايدر فقط إذا توفرت صور حقيقية */}
           {sliderItems.length > 0 && (
             <SwiperCards
@@ -111,7 +112,7 @@ const page = async ({ params }: PageProps) => {
               paginationImages
             />
           )}
-          
+
           <p className="mt-6 text-gray-300 leading-relaxed text-lg">{data?.description_raw}</p>
         </div>
       </div>
@@ -133,8 +134,8 @@ const page = async ({ params }: PageProps) => {
                     <span>{percent}%</span>
                   </div>
                   <div className="w-full bg-zinc-800 h-1.5 rounded-full mt-2 overflow-hidden">
-                    <div 
-                      className="h-full bg-current rounded-full" 
+                    <div
+                      className="h-full bg-current rounded-full"
                       style={{ width: `${percent}%` }}
                     />
                   </div>
