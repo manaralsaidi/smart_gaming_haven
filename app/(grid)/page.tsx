@@ -2,7 +2,7 @@ import connect from "../actions/connect";
 import { getGamesByIds, searchGames } from "../api/api";
 import GamesSlider from "../components/GamesSlider";
 import Hero from "../components/Hero";
-import ChatBox from "../components/ChatBox";
+
 
 export default async function Home() {
   await connect();
@@ -31,11 +31,6 @@ export default async function Home() {
       <GamesSlider screenBig big slidesPerView={2} title="PLAYSTATION EXCLUSIVES" games={customGames.map((game) => game.data)} />
       <GamesSlider slidesPerView={4} title="Top PC Games" games={pc.data.results} />
       
-      {/* AI Assistant Section */}
-      <div className="my-12 px-4">
-        <h2 className="text-2xl font-bold text-center mb-6">AI GAMING ASSISTANT 🎮</h2>
-        <ChatBox />
-      </div>
     </section>
   );
 }

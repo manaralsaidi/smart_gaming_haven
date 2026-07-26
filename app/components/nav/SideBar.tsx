@@ -13,6 +13,7 @@ import { logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
 import { useQueryClient } from "@tanstack/react-query";
 import { IoGameController } from "react-icons/io5";
+import { SiGoogleassistant } from "react-icons/si";
 export const NAV_LINKS = [
   {
     link: "/",
@@ -33,6 +34,11 @@ export const NAV_LINKS = [
     link: "/wishlist",
     label: "Wishlist",
     icon: <FaHeart />,
+  },
+  {
+    link: "/AI Assistant",
+    label: "AI Assistant",
+    icon: <SiGoogleassistant />,
   },
 ];
 
