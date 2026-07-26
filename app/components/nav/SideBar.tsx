@@ -36,7 +36,7 @@ export const NAV_LINKS = [
     icon: <FaHeart />,
   },
   {
-    link: "/AI Assistant",
+    link: "/AI-Assistant",
     label: "AI Assistant",
     icon: <SiGoogleassistant />,
   },
