@@ -9,7 +9,7 @@ const userSchema = new Schema({
   name: { type: String, required: true },
   email: { type: String, unique: true, required: true },
   password: { type: String, select: false, required: true },
-  avatar: imageSchema,
+  avatar: { type: String, default: null },
   wishlist: [{ type: String }],
   topTenList: [{ type: String, max: 10 }],
   gamesRating: [{ type: Schema.Types.ObjectId, ref: "GameReview" }],

@@ -48,34 +48,22 @@ const Singup = () => {
   const onSubmit = async (data: z.infer<typeof singupSchema>) => {
     startTransition(async () => {
       
-      // معالجة رفع الصورة إلى Cloudinary في حال تم اختيار ملف
+      // تحويل الصورة إلى نص Base64 محلياً (بدون أي خدمة سحابية خارجية)
       if (data.avatar && data.avatar.length > 0) {
-        const formData = new FormData();
-        formData.append("file", data.avatar[0]);
-        formData.append("upload_preset", "ml_default");
-
         try {
-          // استخدام الرابط المباشر القياسي لـ Cloudinary لتفادي الـ undefined
-          const res = await fetch("https://api.cloudinary.com/v1_1/demo/image/upload", {
-            method: "POST",
-            body: formData,
+          const file = data.avatar[0];
+          const base64String = await new Promise<string>((resolve, reject) => {
+            const reader = new FileReader();
+            reader.onload = () => resolve(reader.result as string);
+            reader.onerror = () => reject(new Error("Failed to read image file"));
+            reader.readAsDataURL(file);
           });
 
-          if (!res.ok) {
-            const errorResponse = await res.json();
-            console.error("Cloudinary Error:", errorResponse);
-            throw new Error("Failed to upload photo");
-          }
-
-          const cloudinaryData = await res.json();
-          data.avatar = {
-            secure_url: cloudinaryData.secure_url,
-            public_id: cloudinaryData.public_id,
-          };
+          data.avatar = base64String; // 🖼️ يخزن كنص Base64 مباشرة بحقل avatar بقاعدة البيانات
         } catch (error) {
-          console.error("Photo upload failed:", error);
-          toast.error("حدث خطأ أثناء رفع الصورة، سيتم محاولة التسجيل بدونها.");
-          data.avatar = null; 
+          console.error("Photo processing failed:", error);
+          toast.error("حدث خطأ أثناء معالجة الصورة، سيتم محاولة التسجيل بدونها.");
+          data.avatar = null;
         }
       } else {
         data.avatar = null;
