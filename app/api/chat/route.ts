@@ -15,7 +15,7 @@ export async function POST(req: Request) {
     const lastUserMessage = messages[messages.length - 1]?.text || '';
     
     // 2️⃣ البحث في الـ API
-    let searchResultsText = "لم يتم إجراء بحث بعد.";
+    let searchResultsText = "";
     if (lastUserMessage.trim()) {
       try {
         const searchUrl = `${APIURL}games?search=${encodeURIComponent(lastUserMessage)}&page_size=5&key=${KEY}`;
@@ -32,29 +32,30 @@ export async function POST(req: Request) {
             const gameNames = data.results.map((g: any) => g.name).join(', ');
             searchResultsText = `الألعاب المطابقة في مكتبة Gaming Haven: [${gameNames}]`;
           } else {
-            searchResultsText = "لم يتم العثور على ألعاب مطابقة لهذا الاستعلام في المكتبة.";
+            searchResultsText = "لا توجد ألعاب مطابقة محددة في المكتبة لهذا الاستعلام المباشر.";
           }
         }
       } catch (err) {
         console.error("تنبيه: تعذر جلب نتائج البحث في الوقت المحدد:", err);
-        searchResultsText = "تعذر التحقق من المكتبة حالياً بسبب بطء الاتصال.";
+        searchResultsText = "";
       }
     }
 
-    // 🎯 3️⃣systemPrompt  
-    const systemPrompt = `You are the exclusive "Gaming Haven Assistant" inside the Gaming Haven platform.
+    // 🎯 3️⃣ systemPrompt المُعدَّل والدقيق
+    const systemPrompt = `You are "Gaming Haven Assistant" 🎮, a friendly, passionate, and smart AI inside the Gaming Haven platform.
 
-PLATFORM NATURE & IMPORTANT RULES:
-1. NO DOWNLOADS: Gaming Haven is a platform for exploring, reviewing, rating games, and booking gaming sessions ONLY. We DO NOT offer game downloads, torrents, or installations!
-2. IF ASKED ABOUT DOWNLOADING: Politely inform the user that Gaming Haven is an information, review, and session-booking hub, and does not host game downloads.
-3. SCOPE LIMITATION: If the user asks about non-gaming topics (e.g., movies, weather, cooking, general info), politely refuse:
+CRITICAL INSTRUCTIONS:
+1. NEVER mention internal status, code terms, or phrases like "لم يتم إجراء بحث بعد" or "قاعدة البيانات". Speak naturally to the user as an expert gaming companion.
+2. SERVICES OFFERED: Exploring, reviewing, rating video games, and booking interactive gaming sessions with friends.
+3. NO DOWNLOADS: We DO NOT host or offer game downloads/torrents. If asked about downloading, politely explain that Gaming Haven is purely an information, review, and session-booking hub.
+4. BEHAVIOR & SCOPE: 
+   - Answer the user DIRECTLY, enthusiastically, and concisely in Arabic.
+   - Use the database context below if available. If no database results are provided or match, rely freely on your general video game knowledge to give great game recommendations or general info!
+5. OFF-TOPIC RULE: If asked about non-gaming topics (cooking, weather, general history, etc.), politely refuse:
    "أنا مساعد Gaming Haven المختص بالألعاب فقط! 🎮 كيف يمكنني مساعدتك في اختيار لعبتك القادمة؟"
 
-REAL-TIME API DATABASE SEARCH RESULT FOR USER'S QUERY:
-${searchResultsText}
-
-4. ACCURACY: Rely on the "REAL-TIME API DATABASE SEARCH RESULT" provided above. If the game searched by the user appears in the list, confirm that it exists on Gaming Haven!
-5. Keep answers clear, helpful, concise, and in the user's language (Arabic/English).`;
+DATABASE SEARCH CONTEXT:
+${searchResultsText || "لا توجد ألعاب محددة مُسترجعة من البحث. أجب بناءً على معرفتك الشاملة بسوق وأخبار الألعاب."}`;
 
     // 4️⃣ تجهيز الرسائل وإرسالها إلى Groq
     const formattedMessages = [
@@ -74,7 +75,7 @@ ${searchResultsText}
       body: JSON.stringify({
         model: 'llama-3.3-70b-versatile',
         messages: formattedMessages,
-        temperature: 0.4,
+        temperature: 0.5,
       }),
     });
 
