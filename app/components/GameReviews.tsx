@@ -1,14 +1,14 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { FaStar } from "react-icons/fa";
+import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { createReviewAction, getGameReviews } from "../reviewActions";
-
+import { createReviewAction, getGameReviews, toggleLikeReview } from "../reviewActions";
+ 
 interface ReviewProps {
   gameId: string;
   user: { id?: string; _id?: string; name: string } | null;
 }
-
+ 
 const GameReviews = ({ gameId, user }: ReviewProps) => {
   const [reviews, setReviews] = useState<any[]>([]);
   const [rating, setRating] = useState(0);
@@ -16,7 +16,7 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
   const [reviewText, setReviewText] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isLoading, setIsLoading] = useState(true);
-
+ 
   const loadReviews = async () => {
     try {
       setIsLoading(true);
@@ -29,13 +29,13 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
       setIsLoading(false);
     }
   };
-
+ 
   useEffect(() => {
     if (gameId) {
       loadReviews();
     }
   }, [gameId]);
-
+ 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!user) {
@@ -50,26 +50,26 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
       toast.error("Please write your review!");
       return;
     }
-
+ 
     setIsSubmitting(true);
     try {
       // استخراج ID المستخدم آلياً سواء كان id أو _id
       const userId = user.id || user._id;
-
+ 
       if (!userId) {
         toast.error("User ID not found. Please log in again.");
         return;
       }
-
+ 
       // 🚀 استدعاء دالة الإنشاء مع تحديد النوع لتجاوز خطأ TypeScript
       const response: any = await createReviewAction(gameId, userId, reviewText, rating);
-
+ 
       // التأكد مما إذا كان السيرفر أرجع خطأ
       if (response?.error) {
         toast.error(response.error);
         return;
       }
-
+ 
       toast.success("Review submitted successfully!");
       setReviewText("");
       setRating(0);
@@ -80,13 +80,43 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
       setIsSubmitting(false);
     }
   };
-
+ 
+  const handleLike = async (reviewId: string) => {
+    if (!user) {
+      toast.error("You must be logged in to like a review!");
+      return;
+    }
+    const userId = user.id || user._id;
+    if (!userId) return;
+ 
+    // تحديث فوري (Optimistic Update) قبل رد السيرفر
+    setReviews((prev) =>
+      prev.map((r) => {
+        if (r.id !== reviewId) return r;
+        const currentlyLiked = r.likes?.includes(userId);
+        return {
+          ...r,
+          likes: currentlyLiked
+            ? r.likes.filter((id: string) => id !== userId)
+            : [...(r.likes || []), userId],
+          likesCount: currentlyLiked ? r.likesCount - 1 : r.likesCount + 1,
+        };
+      })
+    );
+ 
+    const response: any = await toggleLikeReview(reviewId, userId);
+    if (response?.error) {
+      toast.error(response.error);
+      loadReviews(); // إعادة المزامنة مع السيرفر عند حدوث خطأ
+    }
+  };
+ 
   return (
     <div className="mt-12 bg-black/40 p-6 rounded-xl border border-teal-950/30 text-gray-100 max-w-4xl mx-auto">
       <h3 className="text-2xl font-bold mb-6 text-teal-400 [text-shadow:0_0_10px_rgba(45,212,191,0.3)]">
         Ratings & Reviews
       </h3>
-
+ 
       {/* نموذج إضافة التقييم */}
       {user ? (
         <form onSubmit={handleSubmit} className="mb-10 p-4 bg-teal-950/10 rounded-lg border border-teal-900/20">
@@ -120,14 +150,14 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
               {rating > 0 ? `${rating} / 10` : "0 / 10"}
             </span>
           </div>
-
+ 
           <textarea
             value={reviewText}
             onChange={(e) => setReviewText(e.target.value)}
             placeholder="Tell other gamers what you think about this game..."
             className="w-full p-3 rounded-lg bg-zinc-900 border border-zinc-800 text-gray-100 focus:outline-none focus:border-teal-400 transition duration-200 h-24 resize-none mb-4"
           />
-
+ 
           <button
             type="submit"
             disabled={isSubmitting}
@@ -141,7 +171,7 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
           Please <span className="text-teal-400 font-bold">log in</span> to write a review.
         </div>
       )}
-
+ 
       {/* عرض المراجعات السابقة */}
       <div className="space-y-4">
         <h4 className="text-xl font-semibold border-b border-zinc-800 pb-2 mb-4">Gamer Community Reviews</h4>
@@ -172,6 +202,20 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
               </div>
               
               <p className="text-gray-300 text-sm leading-relaxed">{review.reviewText || review.comment}</p>
+ 
+              <button
+                onClick={() => handleLike(review.id)}
+                className="flex items-center gap-1.5 mt-3 text-sm transition-transform duration-150 active:scale-95 group"
+              >
+                {review.likes?.includes(user?.id || user?._id) ? (
+                  <FaHeart className="text-teal-400" size={16} />
+                ) : (
+                  <FaRegHeart className="text-gray-400 group-hover:text-teal-400 transition-colors" size={16} />
+                )}
+                <span className="text-gray-400 group-hover:text-teal-300 transition-colors">
+                  {review.likesCount || 0}
+                </span>
+              </button>
             </div>
           ))
         )}
@@ -179,5 +223,5 @@ const GameReviews = ({ gameId, user }: ReviewProps) => {
     </div>
   );
 };
-
-export default GameReviews;
+ 
+export default GameReviews
