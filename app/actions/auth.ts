@@ -17,11 +17,27 @@ const generateToken = async ({ id }: { id: any }) => {
 export const signup = async (data: any) => {
   try {
     await connect();
+    const cookieStore = await cookies();
+
     const { confirmPassword, ...userData } = data;
     const hashedPassword = await bcrypt.hash(userData.password, 10);
-    await User.create({ ...userData, password: hashedPassword });
-    
-    return { success: "User created successfully" };
+    const newUser = await User.create({ ...userData, password: hashedPassword });
+
+    // تسجيل الدخول تلقائياً فور إنشاء الحساب (نفس منطق login)
+    const token = await generateToken({ id: newUser._id });
+
+    cookieStore.set("token", token, {
+      httpOnly: true,
+      maxAge: JWT_EXPIRES,
+      sameSite: "lax",
+      path: "/",
+      secure: process.env.NODE_ENV === "production",
+    });
+
+    const userObj = JSON.parse(JSON.stringify(newUser));
+    delete userObj.password;
+
+    return { success: "User created successfully", data: userObj };
   } catch (error: any) {
     console.error("Signup backend error:", error);
     return { error: "User creation failed", details: error.message };

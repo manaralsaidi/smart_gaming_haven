@@ -13,7 +13,7 @@ import Link from "next/link";
 import { FileUploadDemo } from "../FileUpload";
 import { signup } from "@/app/actions/auth";
 import { toast } from "react-toastify";
-import { redirect } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 // 1. تحديد شروط التحقق من البيانات (Validation Schema)
 const singupSchema = z
@@ -30,6 +30,7 @@ const singupSchema = z
   });
 
 const Singup = () => {
+  const router = useRouter();
   const form = useForm<z.infer<typeof singupSchema>>({
     resolver: zodResolver(singupSchema),
     defaultValues: {
@@ -87,7 +88,8 @@ const Singup = () => {
         
         if (response?.success) {
           toast.success(response.success);
-          redirect('/login');
+          router.push('/');
+          router.refresh();
         } else {
           toast.error(response?.error || "حدث خطأ غير متوقع");
         }
