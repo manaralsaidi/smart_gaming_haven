@@ -28,17 +28,12 @@ export const NAV_LINKS = [
     icon: <MdDashboard />,
   },
   {
-    link: "/games",
-    label: "Games",
-    icon: <IoGameController />,
-  },
-  {
     link: "/wishlist",
     label: "Wishlist",
     icon: <FaHeart />,
   },
   {
-    link: "/sessions", // 👈 زر الجلسات الجديد!
+    link: "/sessions",
     label: "Sessions",
     icon: <BsPeopleFill />,
   },
