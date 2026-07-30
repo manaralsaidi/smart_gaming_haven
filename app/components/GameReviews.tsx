@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { FaStar, FaHeart, FaRegHeart } from "react-icons/fa";
 import { toast } from "react-toastify";
-import { createReviewAction, getGameReviews, toggleLikeReview, createReplyAction, getRepliesForReview } from "../reviewActions";
+import { createReviewAction, getGameReviews, toggleLikeReview, createReplyAction, getRepliesForReview } from "../actions/reviewActions";
 
 interface ReviewProps {
   gameId: string;
