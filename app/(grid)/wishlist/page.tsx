@@ -32,7 +32,7 @@ const page = () => {
         ) : (
           <Empty
             message="You have not added anything to your wishlist yet !"
-            link="/games"
+            link="/category"
             linkText="Browse More Games"
           />
         )}
