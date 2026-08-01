@@ -6,15 +6,13 @@ import { MdDashboard } from "react-icons/md";
 import NavLink from "./NavLink";
 import Logo from "../defaults/Logo";
 import { useGetUser } from "@/lib/queryFunctions";
-import { Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { logout } from "@/app/actions/auth";
 import { toast } from "react-toastify";
 import { useQueryClient } from "@tanstack/react-query";
-import { IoGameController } from "react-icons/io5";
 import { SiGoogleassistant } from "react-icons/si";
-import { BsPeopleFill } from "react-icons/bs"; // 👈 أيقونة الجلسات
+import { BsPeopleFill } from "react-icons/bs";
 
 export const NAV_LINKS = [
   {
@@ -61,14 +59,9 @@ const SideBar = () => {
           </div>
         ) : user?.data ? (
           <div className=" mt-auto flex flex-col gap-3 w-full">
-            <NavLink
-              navLink={{
-                link: "/settings",
-                label: "Settings",
-                icon: <Settings />,
-              }}
-            />
-            {/* 🚪 زر تسجيل الخروج بتأثير الفيريديان والتركواز عند تمرير الماوس بدلاً من الأحمر */}
+            {/* 👈 تم حذف رابط الـ Settings من هنا */}
+            
+            {/* 🚪 زر تسجيل الخروج */}
             <Button
               className="w-full text-left justify-start hover:bg-teal-950/40 hover:text-teal-400 transition-colors duration-200"
               onClick={async () => {

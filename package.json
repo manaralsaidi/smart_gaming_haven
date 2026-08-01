@@ -25,6 +25,7 @@
     "clsx": "^2.1.1",
     "framer-motion": "^11.11.9",
     "gaming-tutorial": "file:",
+    "groq-sdk": "^1.5.0",
     "jsonwebtoken": "^9.0.3",
     "lucide-react": "^0.453.0",
     "mongodb": "^6.10.0",

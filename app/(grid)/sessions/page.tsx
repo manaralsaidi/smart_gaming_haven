@@ -8,15 +8,7 @@ export default function SessionsPage() {
   const { user, isLoading } = useGetUser();
   const [sessions, setSessions] = useState<any[]>([]);
   const [aiPrompt, setAiPrompt] = useState('');
-  const [userName, setUserName] = useState('');
   const [loading, setLoading] = useState(false);
-
-  // تعبئة اسم المستخدم تلقائياً عند التعرف على الحساب
-  useEffect(() => {
-    if (user?.data?.name) {
-      setUserName(user.data.name);
-    }
-  }, [user]);
 
   // جلب الجلسات المتاحة
   const fetchSessions = async () => {
@@ -38,14 +30,16 @@ export default function SessionsPage() {
   // دالة إنشاء جلسة بالذكاء الاصطناعي
   const handleCreateAISession = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!aiPrompt.trim() || !userName.trim()) return;
+    const userId = user?.data?._id || user?.data?.id;
+
+    if (!aiPrompt.trim() || !userId) return;
 
     setLoading(true);
     try {
       const res = await fetch('/api/sessions', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ prompt: aiPrompt, userName }),
+        body: JSON.stringify({ prompt: aiPrompt, userId }),
       });
 
       if (res.ok) {
@@ -61,8 +55,10 @@ export default function SessionsPage() {
 
   // دالة الانضمام للجلسة
   const handleJoinSession = async (sessionId: string) => {
-    if (!userName.trim()) {
-      alert('لطفاً ادخلي اسمكِ أولاً لتتمكني من الانضمام!');
+    const userId = user?.data?._id || user?.data?.id;
+
+    if (!userId) {
+      alert('يرجى تسجيل الدخول أولاً لتتمكن من الانضمام!');
       return;
     }
 
@@ -70,7 +66,7 @@ export default function SessionsPage() {
       const res = await fetch('/api/sessions', {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ sessionId, playerName: userName }),
+        body: JSON.stringify({ sessionId, userId }),
       });
 
       if (res.ok) {
@@ -81,7 +77,7 @@ export default function SessionsPage() {
     }
   };
 
-  // 1️⃣ حالة التحقق من الحساب (جاري التحميل)
+  // 1️⃣ حالة التحقق من الحساب
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64 text-teal-400 font-bold">
@@ -117,6 +113,8 @@ export default function SessionsPage() {
     );
   }
 
+  const currentUserId = user?.data?._id || user?.data?.id;
+
   // 3️⃣ الصفحة الكاملة للمستخدم المسجل دخول
   return (
     <div className="p-6 max-w-5xl mx-auto text-slate-100 space-y-8" dir="rtl">
@@ -126,7 +124,7 @@ export default function SessionsPage() {
           🎮 مجتمع الجلسات التفاعلية بالذكاء الاصطناعي
         </h1>
         <p className="text-slate-400 text-sm">
-          أنشئي جلسة لعب بأسلوبكِ الطبيعي أو انضمي إلى الجلسات المتاحة فوراً!
+          أنشئ جلسة لعب بأسلوبك الطبيعي أو انضم إلى الجلسات المتاحة فوراً!
         </p>
       </div>
 
@@ -137,21 +135,13 @@ export default function SessionsPage() {
         </h2>
 
         <form onSubmit={handleCreateAISession} className="space-y-4">
-          <div className="grid md:grid-cols-3 gap-4">
+          <div>
             <input
               type="text"
-              placeholder="اسم المستخدم الخاص بكِ..."
-              value={userName}
-              onChange={(e) => setUserName(e.target.value)}
-              className="bg-[#18222d] border border-teal-900/50 rounded-lg p-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400"
-              required
-            />
-            <input
-              type="text"
-              placeholder="مثال: نبي نلعب Valorant اليوم 9 مساءً نحتاج 3 لاعبين..."
+              placeholder="مثال: بدنا نلعب Valorant اليوم 9 مساءً نحتاج 3 لاعبين..."
               value={aiPrompt}
               onChange={(e) => setAiPrompt(e.target.value)}
-              className="md:col-span-2 bg-[#18222d] border border-teal-900/50 rounded-lg p-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400"
+              className="w-full bg-[#18222d] border border-teal-900/50 rounded-lg p-3 text-sm text-slate-100 placeholder-slate-500 focus:outline-none focus:border-teal-400"
               required
             />
           </div>
@@ -171,12 +161,14 @@ export default function SessionsPage() {
         <h2 className="text-2xl font-bold text-slate-200">🔥 الجلسات المتاحة حالياً</h2>
 
         {sessions.length === 0 ? (
-          <p className="text-slate-500 text-center py-8">لا توجد جلسات حالياً. كوني أول من يُنشئ جلسة!</p>
+          <p className="text-slate-500 text-center py-8">لا توجد جلسات حالياً. كن أول من يُنشئ جلسة!</p>
         ) : (
           <div className="grid md:grid-cols-2 gap-6">
             {sessions.map((session) => {
               const isFull = session.joinedPlayers?.length >= session.maxPlayers;
-              const hasJoined = session.joinedPlayers?.includes(userName);
+              const hasJoined = session.joinedPlayers?.some(
+                (p: any) => (p._id || p) === currentUserId
+              );
 
               return (
                 <div
@@ -191,7 +183,9 @@ export default function SessionsPage() {
                       </span>
                     </div>
 
-                    <p className="text-xs text-slate-400">👤 المنظم: <span className="text-slate-200 font-semibold">{session.hostName}</span></p>
+                    <p className="text-xs text-slate-400">
+                      👤 المنظم: <span className="text-slate-200 font-semibold">{session.host?.name || 'مستخدم'}</span>
+                    </p>
 
                     {session.aiSummary && (
                       <p className="text-xs bg-teal-950/30 text-teal-200 p-2.5 rounded-lg border border-teal-800/30">

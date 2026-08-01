@@ -1,17 +1,38 @@
 import mongoose, { Schema, model, models } from 'mongoose';
 
-const SessionSchema = new Schema(
+const sessionSchema = new Schema(
   {
-    hostName: { type: String, required: true },
-    gameTitle: { type: String, required: true },
-    scheduledTime: { type: String, required: true },
-    maxPlayers: { type: Number, required: true },
-    joinedPlayers: { type: [String], default: [] },
-    discordLink: { type: String, default: '' },
-    aiSummary: { type: String, default: '' },
+    // ربط المنظم بـ ID المستخدم (Foreign Key / Reference)
+    host: {
+      type: Schema.Types.ObjectId,
+      ref: 'User',
+      required: true,
+    },
+    gameTitle: {
+      type: String,
+      required: true,
+    },
+    scheduledTime: {
+      type: String,
+      required: true,
+    },
+    maxPlayers: {
+      type: Number,
+      default: 4,
+    },
+    aiSummary: {
+      type: String,
+    },
+    // قائمة تحتوي على IDs اللاعبين المنضمين
+    joinedPlayers: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'User',
+      },
+    ],
   },
   { timestamps: true }
 );
 
-export const Session = models.Session || model('Session', SessionSchema);
+const Session = models.Session || model('Session', sessionSchema);
 export default Session;
