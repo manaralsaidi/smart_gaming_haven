@@ -12,14 +12,15 @@ const page = () => {
   const { wishlist } = useWishlsit();
   const { games, isLoading } = useGetGamesWithIds(wishlist);
   console.log(games);
+
   return (
     <div className=" mt-10 flex flex-col gap-4">
       <Heading text="My WishList ❤️" />
-      <GridContainer className="  gap-5 " cols={4}>
+      <GridContainer className=" gap-5 " cols={4}>
         {isLoading ? (
           <GameSkeleton />
-        ) : games?.length > 0 ? (
-          games?.map((game: any, i) => (
+        ) : games && games.length > 0 ? (
+          games.map((game: any, i) => (
             <GameCard
               key={i}
               wishlist={true}
