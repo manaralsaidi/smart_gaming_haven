@@ -14,24 +14,42 @@ const getImageUrl = (url: string | null | undefined, fallback = "/placeholder.pn
   return url;
 };
 
-const GameCard = ({ game, wishlist, screenBig = false }: { game: any; wishlist?: boolean; screenBig?: boolean }) => {
+const GameCard = ({
+  game,
+  wishlist = true, // جعل القيمة الافتراضية true حتى يظهر الزر بشكل تلقائي
+  screenBig = false,
+}: {
+  game: any;
+  wishlist?: boolean;
+  screenBig?: boolean;
+}) => {
   // فحص الصور المصغرة الممررة للـ ImageSwitcher وتنظيف أي عنصر يحوي رابطاً فارغاً
   const rawScreenshots = (screenBig ? (game?.short_screenshots as any)?.results : game?.short_screenshots) || [];
   const cleanScreenshots = Array.isArray(rawScreenshots)
     ? rawScreenshots.filter((img: any) => {
-      const src = typeof img === "string" ? img : img?.image;
-      return src && typeof src === "string" && src.trim() !== "";
-    })
+        const src = typeof img === "string" ? img : img?.image;
+        return src && typeof src === "string" && src.trim() !== "";
+      })
     : [];
 
+  // 🔹 تصفية المنصات لمنع تكرار أيقونة الـ Xbox أو PlayStation مرتين
+  const uniquePlatformSlugs = Array.from(
+    new Set(
+      game?.parent_platforms?.map((p: any) => p?.platform?.slug).filter(Boolean)
+    )
+  );
+
   return (
-    <HoverCard>
+    <HoverCard openDelay={200} closeDelay={100}>
       {/* الحاوية الرئيسية للكارت مع جعل زر الـ Wishlist مستقلاً في الطبقة العلوية */}
       <div className="relative group w-full flex flex-col gap-4">
 
         {/* 1️⃣ زر الـ Wishlist */}
         {wishlist && game?.id && (
-          <div className="absolute left-2 top-2 z-30 cursor-pointer transition-transform duration-150 active:scale-95">
+          <div 
+            className="absolute left-2 top-2 z-30 cursor-pointer transition-transform duration-150 active:scale-95"
+            onClick={(e) => e.stopPropagation()} // منع الانتقال لصفحة اللعبة عند الضغط على زر المفضلة
+          >
             <AddToWishList plus gameId={game.id.toString()} />
           </div>
         )}
@@ -56,15 +74,15 @@ const GameCard = ({ game, wishlist, screenBig = false }: { game: any; wishlist?:
               {game?.name}
             </h4>
 
-            {/* أيقونات المنصات */}
+            {/* أيقونات المنصات بدون تكرار */}
             <div className="mt-1 flex items-center gap-1.5 text-gray-400 text-sm">
-              {game?.parent_platforms?.map((platform: any, i: number) => (
-                <span key={`platform-${platform?.platform?.id || i}-${i}`}>
-                  {platform?.platform?.slug === "pc" ? (
+              {uniquePlatformSlugs.map((slug: any) => (
+                <span key={`platform-${slug}`}>
+                  {slug === "pc" ? (
                     <FaSteam className="hover:text-white transition-colors" />
-                  ) : platform?.platform?.slug?.includes("playstation") ? (
+                  ) : slug.includes("playstation") ? (
                     <FaPlaystation className="text-blue-500 hover:text-blue-400 transition-colors" />
-                  ) : platform?.platform?.slug?.includes("xbox") ? (
+                  ) : slug.includes("xbox") ? (
                     <FaXbox className="text-green-500 hover:text-green-400 transition-colors" />
                   ) : null}
                 </span>

@@ -13,6 +13,17 @@ interface Genre {
   name: string;
 }
 
+// تصنيفات احتياطية في حال تعطل RAWG API
+const FALLBACK_GENRES: Genre[] = [
+  { id: 4, name: "Action" },
+  { id: 3, name: "Adventure" },
+  { id: 5, name: "RPG" },
+  { id: 2, name: "Shooter" },
+  { id: 7, name: "Puzzle" },
+  { id: 10, name: "Strategy" },
+  { id: 15, name: "Sports" },
+];
+
 export default function CategoryPage() {
   const [genres, setGenres] = useState<Genre[]>([]);
   const [page, setPage] = useState(1);
@@ -20,8 +31,21 @@ export default function CategoryPage() {
 
   useEffect(() => {
     fetch(`${APIURL}genres?key=${KEY}`)
-      .then((res) => res.json())
-      .then((data) => setGenres(data.results?.slice(0, 15) || []));
+      .then((res) => {
+        if (!res.ok) throw new Error("API error");
+        return res.json();
+      })
+      .then((data) => {
+        if (data.results && data.results.length > 0) {
+          setGenres(data.results.slice(0, 15));
+        } else {
+          setGenres(FALLBACK_GENRES);
+        }
+      })
+      .catch((err) => {
+        console.warn("Failed to fetch genres, using fallback data:", err);
+        setGenres(FALLBACK_GENRES); // الانتقال للتصنيفات الافتراضية عند الخطأ
+      });
   }, []);
 
   const { games, isLoading } = useGetGames({
@@ -63,7 +87,7 @@ export default function CategoryPage() {
           </div>
         </div>
 
-       <GridContainer cols={3} className="gap-3 col-span-9">
+        <GridContainer cols={3} className="gap-3 col-span-9">
           {isLoading ? (
             <GameSkeleton number={21} />
           ) : games?.data?.results && games.data.results.length > 0 ? (

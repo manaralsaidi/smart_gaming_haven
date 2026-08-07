@@ -1,0 +1,142 @@
+[
+  {
+    "id": 3498,
+    "name": "Grand Theft Auto V",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg",
+    "rating": 4.47,
+    "released": "2013-09-17"
+  },
+  {
+    "id": 3328,
+    "name": "The Witcher 3: Wild Hunt",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",
+    "rating": 4.66,
+    "released": "2015-05-18"
+  },
+  {
+    "id": 28,
+    "name": "Red Dead Redemption 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",
+    "rating": 4.59,
+    "released": "2018-10-26"
+  },
+  {
+    "id": 4200,
+    "name": "Portal 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/620/header.jpg",
+    "rating": 4.61,
+    "released": "2011-04-18"
+  },
+  {
+    "id": 58175,
+    "name": "God of War",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg",
+    "rating": 4.58,
+    "released": "2018-04-20"
+  },
+  {
+    "id": 41494,
+    "name": "Cyberpunk 2077",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
+    "rating": 4.13,
+    "released": "2020-12-10"
+  },
+  {
+    "id": 5679,
+    "name": "The Elder Scrolls V: Skyrim",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg",
+    "rating": 4.42,
+    "released": "2011-11-11"
+  },
+  {
+    "id": 3070,
+    "name": "Fallout 4",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/377160/header.jpg",
+    "rating": 3.8,
+    "released": "2015-11-09"
+  },
+  {
+    "id": 2454,
+    "name": "DOOM",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/379720/header.jpg",
+    "rating": 4.38,
+    "released": "2016-05-13"
+  },
+  {
+    "id": 5286,
+    "name": "Tomb Raider",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/203160/header.jpg",
+    "rating": 4.05,
+    "released": "2013-03-05"
+  },
+  {
+    "id": 12020,
+    "name": "Left 4 Dead 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg",
+    "rating": 4.09,
+    "released": "2009-11-17"
+  },
+  {
+    "id": 802,
+    "name": "Borderlands 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/49520/header.jpg",
+    "rating": 4.02,
+    "released": "2012-09-18"
+  },
+  {
+    "id": 13537,
+    "name": "Half-Life 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/220/header.jpg",
+    "rating": 4.49,
+    "released": "2004-11-16"
+  },
+  {
+    "id": 4062,
+    "name": "BioShock Infinite",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/8870/header.jpg",
+    "rating": 4.38,
+    "released": "2013-03-26"
+  },
+  {
+    "id": 3439,
+    "name": "Life is Strange",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/319630/header.jpg",
+    "rating": 4.11,
+    "released": "2015-01-29"
+  },
+  {
+    "id": 1030,
+    "name": "Limbo",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/48000/header.jpg",
+    "rating": 4.15,
+    "released": "2010-07-21"
+  },
+  {
+    "id": 3272,
+    "name": "Rocket League",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/252950/header.jpg",
+    "rating": 3.94,
+    "released": "2015-07-07"
+  },
+  {
+    "id": 32,
+    "name": "Destiny 2",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1085660/header.jpg",
+    "rating": 3.56,
+    "released": "2017-09-06"
+  },
+  {
+    "id": 13536,
+    "name": "Portal",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg",
+    "rating": 4.51,
+    "released": "2007-10-09"
+  },
+  {
+    "id": 2908,
+    "name": "Hitman",
+    "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/236870/header.jpg",
+    "rating": 3.92,
+    "released": "2016-03-11"
+  }
+]
