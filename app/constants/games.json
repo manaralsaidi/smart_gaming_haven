@@ -4,139 +4,259 @@
     "name": "Grand Theft Auto V",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg",
     "rating": 4.47,
-    "released": "2013-09-17"
+    "released": "2013-09-17",
+    "description": "Grand Theft Auto V offers an enthralling open-world experience built around high-stakes heist operations, multi-perspective narrative storytelling, and expansive ambient world dynamics.\nSet in the sun-drenched metropolis of Los Santos, players are introduced to a sprawling urban playground where player freedom and criminal strategy are central to navigating the underworld.\nMaster the ability to seamlessly switch between three distinct protagonists, each equipped with specialized skills designed to execute complex heists, survive intense police pursuits, and dominate tactical shootouts.\nUncover deep conspiracy networks, engage in endless recreational side activities, and experience an unforgettable narrative arc that keeps you thoroughly invested from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_e1f5f242b7811985a1a1f07f59d57a270f2f3922.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_2209d226a27e0524451a5476a88e99b0c611ff63.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/271590/ss_614a93f12d22b64a27bc5292440f316a3f124c65.1920x1080.jpg"
+    ]
   },
   {
     "id": 3328,
     "name": "The Witcher 3: Wild Hunt",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",
     "rating": 4.66,
-    "released": "2015-05-18"
+    "released": "2015-05-18",
+    "description": "The Witcher 3: Wild Hunt offers an engrossing dark-fantasy RPG built around choice-driven questlines, immersive environmental storytelling, and tactical monster hunting.\nSet in a war-torn continent filled with dark folklore, players are introduced to a vast, living universe where moral gray areas and long-term consequences shape every decision.\nMaster the versatile weaponry, alchemical preparations, and combat signs of Geralt of Rivia, mechanics designed to let you track legendary beasts, breach monster defenses, and outsmart political rivals.\nUncover ancient mythological secrets, resolve complex regional conflicts, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/292030/ss_107604f86d638c4c7c83f12a20b0805172aa4b09.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/292030/ss_608149e6347c64eb37a1f59ef8e94553d1000632.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/292030/ss_5e305e55ef90d34f034038aef7a810577a7f45b5.1920x1080.jpg"
+    ]
   },
   {
     "id": 28,
     "name": "Red Dead Redemption 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",
     "rating": 4.59,
-    "released": "2018-10-26"
+    "released": "2018-10-26",
+    "description": "Red Dead Redemption 2 offers a deeply atmospheric Western epic built around outlaw life, detailed survival systems, and emotional character development.\nSet during the decline of the American Wild West, players are introduced to a rugged, living ecosystem where camp camaraderie and personal honor are central to survival.\nMaster authentic gunplay and the precise Dead Eye targeting mechanic, systems designed to let you survive high-stakes train robberies, lethal duels, and wilderness hunting expeditions.\nUncover the tragic fate of the Van der Linde gang, build meaningful bonds across vast frontier towns, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_495c6439121d5a7d3c0356ed7aaeb9b0578ff6a3.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_164b308e4bf921f64983057e0083ebf98e68407f.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1174180/ss_891e4aa9d91f2be1bb3efec978ed06dfa81e3ed9.1920x1080.jpg"
+    ]
   },
   {
     "id": 4200,
     "name": "Portal 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/620/header.jpg",
     "rating": 4.61,
-    "released": "2011-04-18"
+    "released": "2011-04-18",
+    "description": "Portal 2 offers an ingenious puzzle-adventure experience built around spatial physics, witty environmental comedy, and cooperative problem-solving.\nSet within the vast, deteriorating Aperture Science testing facility, players are introduced to a mind-bending world where momentum and spatial awareness dictate your progression.\nMaster the hand-held portal device alongside propulsion and repulsion gels, mechanics engineered to let you manipulate gravity, bypass lethal turrets, and navigate complex test chambers.\nUncover the dark history of Aperture's founders, outwit a rogue artificial intelligence, and experience an unforgettable narrative arc that keeps you thoroughly entertained from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/620/ss_37a28beed18956972ef7f37dd491cb8ec2a66e4a.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/620/ss_02e604ecdae2ee9f143d4d3d8db4a9bbf6f56c70.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/620/ss_ed05e6b4d3db2506e8902d131f4a95632d43be61.1920x1080.jpg"
+    ]
   },
   {
     "id": 58175,
     "name": "God of War",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1593500/header.jpg",
     "rating": 4.58,
-    "released": "2018-04-20"
+    "released": "2018-04-20",
+    "description": "God of War offers an epic action-adventure experience built around visceral melee combat, father-son dynamics, and Norse mythological exploration.\nSet across the breathtaking realms of Scandinavian legend, players are introduced to a mythic universe where grief, redemption, and legendary pantheons collide.\nMaster the weight and recall mechanics of the Leviathan Axe alongside Atreus's tactical bow support, systems designed to crush mythical beasts, shatter elemental shields, and solve ancient puzzles.\nUncover hidden realm secrets, overcome formidable legendary bosses, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/1593500/ss_5f2f534c0e64c125740d58855cf83d2bd5d72f10.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1593500/ss_f8df3dfbc3e6d194c502b4e857dddfa0ca2c41aa.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1593500/ss_27e1fecad8dfb2089408615b3e6e737c3ea406fb.1920x1080.jpg"
+    ]
   },
   {
     "id": 41494,
     "name": "Cyberpunk 2077",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",
     "rating": 4.13,
-    "released": "2020-12-10"
+    "released": "2020-12-10",
+    "description": "Cyberpunk 2077 offers a futuristic action-RPG built around cybernetic customization, high-tech mercenary contracts, and dense urban exploration.\nSet in the neon-drenched megalopolis of Night City, players are introduced to a cutthroat world where corporate power and street-level survival dictate your path.\nMaster cyberware augmentations, quickhacking abilities, and diverse firearms, systems engineered to let you tailor your playstyle to stealth, combat, or technological override.\nUncover corporate conspiracies, navigate dangerous gang alliances, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_321c8188cf8cf32edee8c20573e8fa29a147e4eb.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_602b9fcd6f45532c25608b49e3bfec7f1b206775.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1091500/ss_49fb3bb73db5ed7c938a164b3cfa3aa8bc19be6a.1920x1080.jpg"
+    ]
   },
   {
     "id": 5679,
     "name": "The Elder Scrolls V: Skyrim",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/489830/header.jpg",
     "rating": 4.42,
-    "released": "2011-11-11"
+    "released": "2011-11-11",
+    "description": "Skyrim offers a legendary open-world fantasy experience built around total character freedom, ancient dragon lore, and endless questline exploration.\nSet in a rugged northern province, players are introduced to a vast sandbox universe where skill progression adapts entirely to your chosen playstyle.\nMaster ancient Dragon Shouts, elemental magic, and archery, mechanics tailored to let you battle dragons, explore subterranean ruins, and forge custom weapons.\nUncover ancient prophecy, shape the outcome of a regional civil war, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/489830/ss_7256561f71eb2023a8542be8c9343ee065e1eb2a.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/489830/ss_c445a55745e1a3bcfeef90977465f1efdf162ef0.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/489830/ss_d36dbddcf08f8bb15993a407e3820a324395e921.1920x1080.jpg"
+    ]
   },
   {
     "id": 3070,
     "name": "Fallout 4",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/377160/header.jpg",
     "rating": 3.8,
-    "released": "2015-11-09"
+    "released": "2015-11-09",
+    "description": "Fallout 4 offers a compelling post-apocalyptic RPG built around wasteland survival, settlement building, and deep weapon crafting systems.\nSet in the retro-futuristic ruins of post-nuclear Boston, players are introduced to a dangerous world where faction alliances determine the future of humanity.\nMaster the V.A.T.S. targeting system, power armor suits, and resource scavenging, mechanics designed to let you survive mutated threats and construct thriving communities.\nUncover secret underground facilities, resolve ideological conflicts, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/377160/ss_d13a96860d5b780f2d9ef48835f8d6f9a0c7ebbc.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/377160/ss_8d7db5c2fa12ebbd4b8bd68ad1e913a4ef5db1dc.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/377160/ss_49969dbec00d8b7bc5ec80a87635c15aa31cf0ca.1920x1080.jpg"
+    ]
   },
   {
     "id": 2454,
     "name": "DOOM",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/379720/header.jpg",
     "rating": 4.38,
-    "released": "2016-05-13"
+    "released": "2016-05-13",
+    "description": "DOOM offers a relentlessly fast-paced shooter experience built around aggressive push-forward combat, heavy metal audio design, and brutal execution mechanics.\nSet within a compromised research facility on Mars and the depths of Hell, players are introduced to an intense combat arena where stopping is fatal.\nMaster Glory Kills to replenish health and ammo, using a devastating arsenal of iconic weaponry designed to tear through hordes of demonic forces.\nUncover occult scientific rituals, defeat massive demonic commanders, and experience an unforgettable narrative arc that keeps you adrenaline-fueled from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/379720/ss_544e3d3c8c53835e0548ca7c6f01a37c9a4bbcd1.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/379720/ss_8803a6bc4df03d42c3be4564c7bd44f77a7b8e38.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/379720/ss_593259ce3643b27bcfb92d6e3c3bcf5b3cf13ba8.1920x1080.jpg"
+    ]
   },
   {
     "id": 5286,
     "name": "Tomb Raider",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/203160/header.jpg",
     "rating": 4.05,
-    "released": "2013-03-05"
+    "released": "2013-03-05",
+    "description": "Tomb Raider offers a gritty survival-action reboot built around Lara Croft's origins, environmental traversal, and instinctive resourcefulness.\nSet on the mysterious and treacherous island of Yamatai, players are introduced to a hostile wilderness where instinct and endurance are required to survive.\nMaster improvised bow combat, climbing gear mechanics, and environmental puzzle solving, systems designed to help you battle fanatical cultists and traverse lethal terrain.\nUncover ancient island mythologies, rescue stranded allies, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/203160/ss_0d1ee94e6cf3ec9aaef2fb1be7c9dd8d40c6a386.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/203160/ss_e1e1a5f6e80b4e0b0e515d90ee4cded906e53066.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/203160/ss_d44bb0da2dd62c5b7cb3fa08f1f7d54d92ef7ffb.1920x1080.jpg"
+    ]
   },
   {
     "id": 12020,
     "name": "Left 4 Dead 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/550/header.jpg",
     "rating": 4.09,
-    "released": "2009-11-17"
+    "released": "2009-11-17",
+    "description": "Left 4 Dead 2 offers an iconic cooperative zombie survival experience built around team coordination, dynamic pacing, and chaotic melee combat.\nSet across the Southern United States, players are introduced to a apocalyptic landscape where mutual aid and tactical communication are vital.\nMaster the dynamic AI Director system, which adjusts enemy spawns, weather, and item availability in real-time to keep every playthrough unpredictable and intense.\nUncover evacuation routes, defeat specialized infected mutants, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/550/ss_614a93f12d22b64a27bc5292440f316a3f124c65.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/550/ss_91a09fe74a6bf797e8e5d0a6496ebaa94cb83bf2.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/550/ss_498aa2b957e0b57e75bbd26d7aa16be1a0112c3f.1920x1080.jpg"
+    ]
   },
   {
     "id": 802,
     "name": "Borderlands 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/49520/header.jpg",
     "rating": 4.02,
-    "released": "2012-09-18"
+    "released": "2012-09-18",
+    "description": "Borderlands 2 offers an addictive looter-shooter adventure built around procedural weapon generation, cell-shaded humor, and cooperative Vault Hunter classes.\nSet on the chaotic planet of Pandora, players are introduced to a vibrant, lawless world threatened by an eccentric corporate dictator.\nMaster unique Vault Hunter action skills, elemental damage types, and endless weapon combinations designed to blast through legions of bandits and alien fauna.\nUncover Vault secrets, overthrow Handsome Jack's regime, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/49520/ss_d82cc7cce30da03a6bc7a8f9a9c68ea7ffbbbfdb.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/49520/ss_e31aa0ee8ea49d7da9c148aeef11e2f6ceef5ffc.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/49520/ss_bc2f592d37c8e8a6fa02927e1f4ef3968cdbb3bb.1920x1080.jpg"
+    ]
   },
   {
     "id": 13537,
     "name": "Half-Life 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/220/header.jpg",
     "rating": 4.49,
-    "released": "2004-11-16"
+    "released": "2004-11-16",
+    "description": "Half-Life 2 offers a landmark sci-fi FPS experience built around physics-based gameplay, environmental storytelling, and seamless world integration.\nSet in the dystopian police state of City 17, players are introduced to a oppressed world fighting back against an interdimensional empire.\nMaster the revolutionary Gravity Gun, a tool designed to turn ambient environmental objects into lethal weapons and solve intricate mechanical puzzles.\nUncover alien oppressive structures, lead human resistance forces, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/220/ss_7e16e6e236f1c4df19934c568d40763bb53e7f9a.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/220/ss_6592dd7f6fbbe81ebfce30bc9ebf3900b91d2438.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/220/ss_3f83737ec3eb999ed2f46cfc3c8cf3d455ec3aef.1920x1080.jpg"
+    ]
   },
   {
     "id": 4062,
     "name": "BioShock Infinite",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/8870/header.jpg",
     "rating": 4.38,
-    "released": "2013-03-26"
+    "released": "2013-03-26",
+    "description": "BioShock Infinite offers a mind-bending story-driven shooter built around airborne mobility, dimensional tears, and philosophical mystery.\nSet in Columbia, a floating city high in the clouds, players are introduced to a visually stunning yet deeply divided society.\nMaster supernatural Vigors alongside the Sky-Hook traversal system, mechanics designed to let you zip across airborne rails and combine elemental combat powers.\nUncover quantum secrets alongside Elizabeth, escape zealot factions, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/8870/ss_75e2ef721087ff7b7ce7614e59f425b96a840eef.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/8870/ss_6464f16361bcde6a54bd2199b4566373b9e4a3ed.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/8870/ss_fecde773ef333425f3c9593a1bf18efcecc1dbda.1920x1080.jpg"
+    ]
   },
   {
     "id": 3439,
     "name": "Life is Strange",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/319630/header.jpg",
     "rating": 4.11,
-    "released": "2015-01-29"
+    "released": "2015-01-29",
+    "description": "Life is Strange offers an engrossing interactive experience built around choice-driven narrative, immersive environmental storytelling, and emotional character development.\nSet in a beautifully stylized Pacific Northwest town, players are introduced to a captivating, grounded universe where player agency and moral decision-making are central to shaping the story's outcome.\nMaster the unique ability to rewind time, a core mechanic designed to let you preview the immediate consequences of your choices, solve environmental puzzles, and alter the course of key dialogue scenes.\nUncover small-town secrets, overcome intense psychological and emotional dilemmas, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/319630/ss_6c026b911dd1c73a81eaaeec886d3bce3f6c8d7b.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/319630/ss_4cb8a72c42ce0ff815858022d25ed20c8ceec236.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/319630/ss_222da8b74ff6f1ffb2f56b009cd3ee1cb2c9ca94.1920x1080.jpg"
+    ]
   },
   {
     "id": 1030,
     "name": "Limbo",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/48000/header.jpg",
     "rating": 4.15,
-    "released": "2010-07-21"
+    "released": "2010-07-21",
+    "description": "Limbo offers a hauntingly minimalist puzzle-platformer built around monochromatic visual aesthetics, trial-and-error environmental hazards, and eerie ambient design.\nSet in a dark, atmospheric surreal world, players are introduced to a silent, mysterious realm where survival depends on observation and quick reflexes.\nMaster precise physics-based jumping, crate manipulation, and trap avoidance, mechanics designed to navigate deadly mechanical machinery and monstrous threats.\nUncover mysterious environmental clues, guide a young boy through darkness, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/48000/ss_21696dfd2fb3ce76bd6941ccca60b24dc6c96887.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/48000/ss_24d0ff9e4722cfa667f339cf0c354e3f3606f157.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/48000/ss_6b1dfbe0fec7d6aebff1ddcb3db9fa7b494d1bd6.1920x1080.jpg"
+    ]
   },
   {
     "id": 3272,
     "name": "Rocket League",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/252950/header.jpg",
     "rating": 3.94,
-    "released": "2015-07-07"
+    "released": "2015-07-07",
+    "description": "Rocket League offers a high-octane competitive sports hybrid built around physics-driven vehicle control, aerial maneuvering, and team coordination.\nSet in vibrant futuristic arenas, players are introduced to a fast-paced sport combining rocket-powered cars with giant soccer balls.\nMaster boost mechanics, wall-riding, and mid-air flips, controls engineered to let you perform spectacular saves, precise passes, and aerial goals.\nUncover competitive rank tiers, customize custom vehicle battle-cars, and experience an unforgettable multiplayer game arc that keeps you returning for more.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/252950/ss_c61b623cc096ce1bb8b6c4eb8ee134d1aa471dfc.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/252950/ss_bebe9426f041ff34ee1c4aa999119ee7edae3c17.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/252950/ss_16a3c6be8ebfae4db95c8cc087d0e37b2586b4ee.1920x1080.jpg"
+    ]
   },
   {
     "id": 32,
     "name": "Destiny 2",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/1085660/header.jpg",
     "rating": 3.56,
-    "released": "2017-09-06"
+    "released": "2017-09-06",
+    "description": "Destiny 2 offers an expansive MMO action-shooter built around elemental class abilities, epic raid encounters, and continuous world evolution.\nSet across the far reaches of the solar system, players are introduced to a mythical sci-fi universe where Guardians defend humanity's last safe city.\nMaster Super abilities, weapon synergies, and gear armor builds, systems designed to tackle high-difficulty dungeons, Crucible PvP arenas, and cooperative strikes.\nUncover ancient cosmic forces, defeat alien gods, and experience an unforgettable ongoing narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/1085660/ss_91a1a5462551ec4eb3cae0261ca78bbec3aa5eb3.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1085660/ss_f8602b9ff9809ed8d49ee1c0ebefb1a20ee4beed.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/1085660/ss_5d46a8fcfa89eb1fe1f93ef92d5c8fa573e0c0bd.1920x1080.jpg"
+    ]
   },
   {
     "id": 13536,
     "name": "Portal",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/400/header.jpg",
     "rating": 4.51,
-    "released": "2007-10-09"
+    "released": "2007-10-09",
+    "description": "Portal offers a groundbreaking first-person puzzle game built around momentum transfer, spatial geometry, and dark comedic commentary.\nSet inside the sterile test chambers of Aperture Science, players are introduced to a mind-bending facility monitored by a sinister AI.\nMaster the placement of entry and exit portals, mechanics engineered to overcome environmental barriers, lethal lasers, and gravity-defying drops.\nUncover hidden rooms behind test walls, outwit GLaDOS, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/400/ss_c41031d277bf82387118318f7311181f08722a57.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/400/ss_6799017ae7a29e46a782a1708846c879986b6a03.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/400/ss_62b5bf4ecbeee5fe2374e5bd32ed24584e0fb432.1920x1080.jpg"
+    ]
   },
   {
     "id": 2908,
     "name": "Hitman",
     "background_image": "https://cdn.akamai.steamstatic.com/steam/apps/236870/header.jpg",
     "rating": 3.92,
-    "released": "2016-03-11"
+    "released": "2016-03-11",
+    "description": "Hitman offers a premier stealth-sandbox experience built around disguise mechanics, environmental assassination, and tactical patience.\nSet across sprawling international luxury locations, players are introduced to a intricate world of high-society crime and contract hits.\nMaster disguise mechanics, silent eliminations, and staged environmental accidents, systems designed to grant complete freedom in how you eliminate targets.\nUncover international shadow cabals, execute the perfect Silent Assassin rating, and experience an unforgettable narrative arc that keeps you deeply engaged from start to finish.",
+    "screenshots": [
+      "https://cdn.akamai.steamstatic.com/steam/apps/236870/ss_0946b5a04ebff775bdf41399cb14c4424cf318df.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/236870/ss_5bb91a5db4e9c704204ff359cf9bc3039d91f278.1920x1080.jpg",
+      "https://cdn.akamai.steamstatic.com/steam/apps/236870/ss_ccde0e7ddc458ef2aa026d3fbcc3c7ef4ae9fb46.1920x1080.jpg"
+    ]
   }
 ]

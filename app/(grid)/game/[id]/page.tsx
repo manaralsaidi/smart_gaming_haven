@@ -5,7 +5,7 @@ import GameReviews from "@/app/components/GameReviews";
 import { getUser } from "@/app/actions/auth";
 import Image from "next/image";
 import React from "react";
-import gamesData from "@/app/constants/games.json"; // 👈 استيراد البيانات المحلية
+import gamesData from "@/app/constants/games.json";
 
 const getRatingColor = (title: string) => {
   switch (title.toLowerCase()) {
@@ -29,22 +29,29 @@ const page = async ({ params }: PageProps) => {
     return <div className="text-center text-red-500 py-10">Invalid Game ID</div>;
   }
 
-  // 1️⃣ المحاولة أولاً من الـ API
+  // 1️⃣ البحث عن اللعبة في الملف المحلي جيسون أولاً
+  const localGame = gamesData.find((g: any) => g.id.toString() === id.toString()) || gamesData[0];
+
+  // 2️⃣ المحاولة من الـ API
   let game = await getGame(id).catch((err) => {
     console.error("Error fetching game data from API:", err);
     return null;
   });
 
-  // 2️⃣ الخطة البديلة (Fallback): البحث عن اللعبة محلياً عند فشل الـ API
+  // 3️⃣ الخطة البديلة عند فشل الـ API
   if (!game || !game.data) {
-    const fallbackGame = gamesData.find((g) => g.id.toString() === id.toString()) || gamesData[0];
-    
+    // جلب الصور المحلية المضافة حديثاً في games.json
+    const localScreenshots =
+      localGame.screenshots && localGame.screenshots.length > 0
+        ? localGame.screenshots.map((img: string) => ({ image: img }))
+        : [{ image: localGame.background_image }];
+
     game = {
       data: {
-        id: fallbackGame.id,
-        name: fallbackGame.name,
-        background_image: fallbackGame.background_image,
-        description_raw: `${fallbackGame.name} is an amazing game available to play now. (Loaded from Fallback Data)`,
+        id: localGame.id,
+        name: localGame.name,
+        background_image: localGame.background_image,
+        description_raw: localGame.description || `${localGame.name} is an amazing game available to play now.`,
         ratings_count: 1250,
         ratings: [
           { id: 1, title: "exceptional", count: 800, percent: 64 },
@@ -54,12 +61,10 @@ const page = async ({ params }: PageProps) => {
         ],
       },
       screenshots: {
-        results: [
-          { image: fallbackGame.background_image }
-        ],
+        results: localScreenshots,
       },
       similar: {
-        results: gamesData.filter((g) => g.id.toString() !== id.toString()),
+        results: gamesData.filter((g: any) => g.id.toString() !== id.toString()),
       },
     };
   }
@@ -74,6 +79,12 @@ const page = async ({ params }: PageProps) => {
     : null;
 
   const { screenshots, data, similar }: { screenshots: any; data: any; similar: any } = game;
+
+  // اختيار الوصف: إما القادم المكتمل من RAWG أو الوصف المخصص من games.json
+  const displayDescription =
+    data?.description_raw && data.description_raw.trim().length > 100
+      ? data.description_raw
+      : localGame.description || data?.description_raw;
 
   const rawImages = [
     ...(screenshots?.results || []),
@@ -133,7 +144,10 @@ const page = async ({ params }: PageProps) => {
             />
           )}
 
-          <p className="mt-6 text-gray-300 leading-relaxed text-lg">{data?.description_raw}</p>
+          {/* عرض النص الحقيقي المأخوذ من games.json مع مراعاة السطور */}
+          <div className="mt-6 text-gray-300 leading-relaxed text-base md:text-lg whitespace-pre-line border-l-4 border-teal-500 pl-4 py-1">
+            {displayDescription}
+          </div>
         </div>
       </div>
 
