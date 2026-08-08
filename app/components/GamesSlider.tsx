@@ -42,6 +42,7 @@ const GamesSlider = ({
                 card: big ? (
                   /* تحويل الكارت الكبير كاملاً إلى رابط ديناميكي للعبة */
                   <Link
+                    key={game.id}
                     href={`/game/${game.id}`}
                     className="flex overflow-hidden items-center bg-main rounded-2xl group transition-all duration-200 active:scale-[0.97]"
                   >
@@ -64,7 +65,7 @@ const GamesSlider = ({
                     </div>
                   </Link>
                 ) : (
-                  <div className="relative group">
+                  <div key={game.id} className="relative group">
                     {/* جعل الصورة والاسم معاً رابطاً واحداً قابلاً للضغط */}
                     <Link
                       href={`/game/${game.id}`}
