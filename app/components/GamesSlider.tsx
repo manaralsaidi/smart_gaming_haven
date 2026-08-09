@@ -71,9 +71,10 @@ const GamesSlider = ({
                       href={`/game/${game.id}`}
                       className="block cursor-pointer transition-transform duration-150 active:scale-[0.97]"
                     >
+                      {/* 🔹 تم استبدال h-96 بـ aspect-video للحصول على نسبة عرض إلى ارتفاع أفقية متناسقة */}
                       <div
                         className="after:absolute after:inset-0 
-                      after:w-0 group-hover:after:w-full after:h-full after:bg-teal-500/40 after:rounded-2xl after:duration-200 w-full h-96 rounded-2xl overflow-hidden relative shadow-[0_0_15px_rgba(45,212,191,0)] group-hover:shadow-[0_0_20px_rgba(45,212,191,0.3)] transition-all duration-300"
+                      after:w-0 group-hover:after:w-full after:h-full after:bg-teal-500/40 after:rounded-2xl after:duration-200 w-full aspect-video rounded-2xl overflow-hidden relative shadow-[0_0_15px_rgba(45,212,191,0)] group-hover:shadow-[0_0_20px_rgba(45,212,191,0.3)] transition-all duration-300"
                       >
                         <Image
                           className="group-hover:scale-125 group-hover:rotate-6 duration-200 object-cover"

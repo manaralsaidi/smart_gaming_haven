@@ -58,8 +58,8 @@ const GameCard = ({
         <HoverCardTrigger className="w-full cursor-pointer" asChild>
           <Link href={`/game/${game?.id}`} className="flex flex-col gap-2 w-full text-left transition-transform duration-150 active:scale-[0.97]">
 
-            {/* غلاف الصورة مع حماية حقل المصدر */}
-            <div className="relative w-full overflow-hidden h-64 rounded-xl border border-zinc-800/30 group-hover:border-teal-500/40 group-hover:shadow-[0_0_20px_rgba(45,212,191,0.15)] transition-all duration-300">
+            {/* غلاف الصورة مع نسبة أبعاد متناسقة أفقياً (aspect-video) لمنع تمطيط الصورة */}
+            <div className="relative w-full aspect-video overflow-hidden rounded-xl border border-zinc-800/30 group-hover:border-teal-500/40 group-hover:shadow-[0_0_20px_rgba(45,212,191,0.15)] transition-all duration-300">
               <Image
                 className="object-cover group-hover:scale-105 duration-300"
                 src={getImageUrl(game?.background_image)}
