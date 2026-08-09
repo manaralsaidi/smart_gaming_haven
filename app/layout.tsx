@@ -6,8 +6,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import QueryProvider from "@/lib/QueryProvider";
 export const metadata: Metadata = {
-  title: "Gaming Boi",
-  description: "this is a gaming website ",
+  title: "Gaming Haven",
+  description: "منصة مجتمعية متكاملة لعشّاق الألعاب — تقييمات، جلسات لعب جماعية، ومساعد ذكاء اصطناعي.",
 };
 
 export default function RootLayout({

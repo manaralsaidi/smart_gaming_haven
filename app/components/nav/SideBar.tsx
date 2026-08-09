@@ -58,10 +58,7 @@ const SideBar = () => {
             <Skeleton className="h-4 w-[100px]" />
           </div>
         ) : user?.data ? (
-          <div className=" mt-auto flex flex-col gap-3 w-full">
-            {/* 👈 تم حذف رابط الـ Settings من هنا */}
-            
-            {/* 🚪 زر تسجيل الخروج */}
+          <div className="mt-auto flex flex-col gap-3 w-full">
             <Button
               className="w-full text-left justify-start hover:bg-teal-950/40 hover:text-teal-400 transition-colors duration-200"
               onClick={async () => {
@@ -76,7 +73,14 @@ const SideBar = () => {
               Logout
             </Button>
           </div>
-        ) : null}
+        ) : (
+          <div className="mt-auto" />
+        )}
+
+        {/* Powered by - دايماً آخر شي، مباشرة تحت الـ Logout */}
+        <p className="pt-4 text-xs text-gray-500 w-full text-center">
+          Powered by: Elie Naddour & Manar Alsaidi
+        </p>
       </div>
     </div>
   );
