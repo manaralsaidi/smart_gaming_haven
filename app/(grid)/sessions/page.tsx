@@ -10,7 +10,6 @@ export default function SessionsPage() {
   const [aiPrompt, setAiPrompt] = useState('');
   const [loading, setLoading] = useState(false);
 
-  // جلب الجلسات المتاحة
   const fetchSessions = async () => {
     try {
       const res = await fetch('/api/sessions');
@@ -27,7 +26,6 @@ export default function SessionsPage() {
     fetchSessions();
   }, []);
 
-  // دالة إنشاء جلسة بالذكاء الاصطناعي
   const handleCreateAISession = async (e: React.FormEvent) => {
     e.preventDefault();
     const userId = user?.data?._id || user?.data?.id;
@@ -53,7 +51,6 @@ export default function SessionsPage() {
     }
   };
 
-  // دالة الانضمام للجلسة
   const handleJoinSession = async (sessionId: string) => {
     const userId = user?.data?._id || user?.data?.id;
 
@@ -77,7 +74,6 @@ export default function SessionsPage() {
     }
   };
 
-  // 1️⃣ حالة التحقق من الحساب
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-64 text-teal-400 font-bold">
@@ -86,7 +82,6 @@ export default function SessionsPage() {
     );
   }
 
-  // 2️⃣ حماية الصفحة: إذا لم يكن المستخدم مسجلاً للدخول
   if (!user?.data) {
     return (
       <div className="p-8 max-w-xl mx-auto text-center bg-[#0f171e] border border-teal-500/30 rounded-2xl space-y-4 my-12" dir="rtl">
@@ -115,7 +110,6 @@ export default function SessionsPage() {
 
   const currentUserId = user?.data?._id || user?.data?.id;
 
-  // 3️⃣ الصفحة الكاملة للمستخدم المسجل دخول
   return (
     <div className="p-6 max-w-5xl mx-auto text-slate-100 space-y-8" dir="rtl">
       {/* العنوان الرئيسي */}

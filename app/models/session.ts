@@ -2,7 +2,6 @@ import mongoose, { Schema, model, models } from 'mongoose';
 
 const sessionSchema = new Schema(
   {
-    // ربط المنظم بـ ID المستخدم (Foreign Key / Reference)
     host: {
       type: Schema.Types.ObjectId,
       ref: 'User',
@@ -23,7 +22,6 @@ const sessionSchema = new Schema(
     aiSummary: {
       type: String,
     },
-    // قائمة تحتوي على IDs اللاعبين المنضمين
     joinedPlayers: [
       {
         type: Schema.Types.ObjectId,

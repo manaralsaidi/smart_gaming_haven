@@ -13,7 +13,6 @@ const Page = () => {
   const { wishlist } = useWishlsit();
   const { games, isLoading } = useGetGamesWithIds(wishlist);
 
-  // 🔹 تصفية الألعاب المكررة بأمان وبدون أخطاء TypeScript
   const uniqueGames = Array.isArray(games)
     ? games.filter(
         (game: any, index: number, self: any[]) =>
